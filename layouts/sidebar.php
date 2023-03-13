@@ -43,15 +43,6 @@
                   <?php
                     if (empty($_SESSION["username"])) {
                     ?>
-                      <li class="nav-item">
-                          <a href="perhitungan.php" class="nav-link">
-                              <i class="nav-icon fas fa-search-plus"></i>
-                              <p>
-                                  Perhitungan
-                              </p>
-                          </a>
-                      </li>
-                        
                       <li class="nav-header">Other</li>
                       <li class="nav-item">
                           <a href="tentang.php" class="nav-link">
@@ -78,6 +69,15 @@
                               </p>
                           </a>
                       </li>
+                      <li class="nav-item">
+                          <a href="perhitungan.php" class="nav-link">
+                              <i class="nav-icon fas fa-search-plus"></i>
+                              <p>
+                                  Perhitungan
+                              </p>
+                          </a>
+                      </li>
+
                       <li class="nav-item">
                           <a href="#" class="nav-link">
                               <i class="nav-icon fas fa-search-plus"></i>

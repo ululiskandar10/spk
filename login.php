@@ -149,22 +149,6 @@ if (isset($_POST["login"])) {
                 </li>
                 <li class="nav-header">Menu</li>
                 <li class="nav-item">
-                    <a href="perhitungan.php" class="nav-link">
-                        <i class="nav-icon fas fa-search-plus"></i>
-                        <p>
-                            Perhitungan
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="keterangan.php" class="nav-link">
-                        <i class="nav-icon fas fa-comments"></i>
-                        <p>
-                            Keterangan
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="tentang.php" class="nav-link">
                         <i class="nav-icon fas fa-info-circle"></i>
                         <p>

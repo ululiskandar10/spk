@@ -7,20 +7,24 @@ function ubah_datalatih($data)
     global $conn;
     $id = $data["id"];
     $usia = $data['usia'];
-    $pendidikan_terakhir = $data['pendidikan_terakhir'];
-    $pekerjaan = $data['pekerjaan'];
-    $pendapatan_perbulan = $data['pendapatan_perbulan'];
-    $kondisi_hunian = $data['kondisi_hunian'];
-    $sejahtera = $data['sejahtera'];
+    $motorik_kasar = $data['motorik_kasar'];
+    $motorik_halus = $data['motorik_halus'];
+    $kognitif_anak = $data['kognitif_anak'];
+    $kompetensi_dasar_akhlak = $data['kompetensi_dasar_akhlak'];
+    $kompetensi_dasar_umum = $data['kompetensi_dasar_umum'];
+    $kemandirian = $data['kemandirian'];
+    $kesiapan = $data['kesiapan'];
 
     $query = "UPDATE tb_data
                 SET
 				usia = '$usia',
-				pendidikan_terakhir = '$pendidikan_terakhir',
-				pekerjaan = '$pekerjaan',
-				pendapatan_perbulan = '$pendapatan_perbulan',
-				kondisi_hunian = '$kondisi_hunian',
-				sejahtera = '$sejahtera'
+				motorik_kasar = '$motorik_kasar',
+				motorik_halus = '$motorik_halus',
+				kognitif_anak = '$kognitif_anak',
+				kompetensi_akhlak = '$kompetensi_dasar_akhlak',
+				kompetensi_umum = '$kompetensi_dasar_umum',
+				kemandirian = '$kemandirian',
+				kesiapan = '$kesiapan'
                 WHERE id = $id
 			";
 

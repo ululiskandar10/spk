@@ -49,9 +49,6 @@ require 'layouts/sidebar.php';
                                         <th>Nama Lengkap</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Usia</th>
-                                        <th>Motorik Kasar</th>
-                                        <th>Motorik Halus</th>
-                                        <th>Kognitif Anak</th>
                                         <th>Kemandirian</th>
                                         <th>Kesiapan</th>
                                         <th>Aksi</th>
@@ -68,23 +65,91 @@ require 'layouts/sidebar.php';
                                         <td><?= $row[1]; ?></td>
                                         <td><?= $row[2]; ?></td>
                                         <td><?= $row[3]; ?></td>
-                                        <td><?= $row[4]; ?></td>
-                                        <td><?= $row[5]; ?></td>
-                                        <td><?= $row[6]; ?></td>
-                                        <td><?= $row[7]; ?></td>
-                                        <td><?= $row[8]; ?></td>
+                                        <td><?= $row[9]; ?></td>
+                                        <td><?= $row[10]; ?></td>
                                         <td>
+                                            <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#DetailModal<?= $row[0]; ?>"><i class="fas fa-eye"></i> </a>
                                             <a class="btn btn-success btn-sm ubah" data-toggle="modal" data-target="#EditModal<?= $row[0]; ?>"><i class="fas fa-edit"></i> </a>
                                             <a class="btn btn-danger btn-sm hapus_datalatih" href="data_latih/hapus.php?id=<?= $row[0]; ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
 
-                                    <!-- Edit Modal -->
-                                    <div class="modal fade" id="EditModal<?= $row[0]; ?>" tabindex="-1" role="dialog" aria-labelledby="#EditModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-md" role="document">
+                                    <!-- Detail Modal -->
+                                    <div class="modal fade" id="DetailModal<?= $row[0]; ?>" tabindex="-1" role="dialog" aria-labelledby="#DetailModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="EditModalLabel">Ubah Data Latih</h5>
+                                                    <h5 class="modal-title" id="DetailModalLabel">Detail Data
+                                                        <strong><?= $row[1]; ?></strong>
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="motorik_kasar">Motori Kasar</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="motorik_kasar" name="motorik_kasar" value="<?= $row[4]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="motorik_halus">Motori Halus</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="motorik_halus" name="motorik_halus" value="<?= $row[5]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="kognitif_anak">Kognitif Anak</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="kognitif_anak" name="kognitif_anak" value="<?= $row[6]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="kemandirian">Kemandirian</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="kemandirian" name="kemandirian" value="<?= $row[9]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="kompetensi_dasar_akhlak">Kompetensi Dasar Akhlak
+                                                                    Perilaku Sosial Emosi</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="kompetensi_dasar_akhlak" name="kompetensi_dasar_akhlak" value="<?= $row[7]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="kompetensi_dasar_umum">Kompetensi Umum</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="kompetensi_dasar_umum" name="kompetensi_dasar_umum" value="<?= $row[8]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="kesiapan">Kesiapan</label>
+                                                                <input type="text" autocomplete="off" class="form-control" id="kesiapan" name="kesiapan" value="<?= $row[10]; ?>" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembail</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Edit Modal -->
+                                    <div class="modal fade" id="EditModal<?= $row[0]; ?>" tabindex="-1" role="dialog" aria-labelledby="#EditModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="EditModalLabel">Ubah Data
+                                                        <strong><?= $row[1]; ?></strong>
+                                                    </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -92,79 +157,102 @@ require 'layouts/sidebar.php';
                                                 <form action="data_latih/ubah.php" method="post">
                                                     <div class="modal-body">
                                                         <input type="hidden" name="id" value="<?= $row[0]; ?>">
-                                                        <div class="form-group">
-                                                            <label for="no_kk">No. KK</label>
-                                                            <input type="text" autocomplete="off" class="form-control" id="no_kk" name="no_kk" value="<?= $row[1]; ?>" readonly>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" autocomplete="off" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?= $row[2]; ?>" readonly>
-                                                        </div>
                                                         <div class="row">
-                                                            <div class="col-6">
+                                                            <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label for="usia">Usia</label>
-                                                                    <input type="number" autocomplete="off" class="form-control" id="usia" name="usia" value="<?= $row[4]; ?>" placeholder="Nama Kondisi">
+                                                                    <input type="text" autocomplete="off" class="form-control" id="usia" name="usia" value="<?= $row[3]; ?>" placeholder="Nama Kondisi">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
-                                                                    <select class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir">
+                                                                    <label for="motorik_kasar">Motorik Kasar</label>
+                                                                    <select class="form-control" name="motorik_kasar" id="motorik_kasar">
                                                                         <option>--Silahkan Pilih--</option>
                                                                         <?php
-                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Pendidikan Terakhir'");
+                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Motorik Kasar'");
                                                                         while ($kriteria = mysqli_fetch_array($query)) {
                                                                         ?>
-                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[5] == $kriteria[2]) echo 'selected="selected"'; ?>><?= $kriteria[2]; ?></option>
+                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[4] == $kriteria[2]) echo 'selected="selected"'; ?>>
+                                                                                <?= $kriteria[2]; ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="pekerjaan">Pekerjaan</label>
-                                                                    <select class="form-control" name="pekerjaan" id="pekerjaan">
+                                                                    <label for="motorik_halus">Motorik Halus</label>
+                                                                    <select class="form-control" name="motorik_halus" id="motorik_halus">
                                                                         <option>--Silahkan Pilih--</option>
                                                                         <?php
-                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Pekerjaan'");
+                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Motorik Halus'");
                                                                         while ($kriteria = mysqli_fetch_array($query)) {
                                                                         ?>
-                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[6] == $kriteria[2]) echo 'selected="selected"'; ?>><?= $kriteria[2]; ?></option>
+                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[5] == $kriteria[2]) echo 'selected="selected"'; ?>>
+                                                                                <?= $kriteria[2]; ?></option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="kognitif_anak">Kognitif Anak</label>
+                                                                    <select class="form-control" name="kognitif_anak" id="kognitif_anak">
+                                                                        <option>--Silahkan Pilih--</option>
+                                                                        <?php
+                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Kognitif Anak'");
+                                                                        while ($kriteria = mysqli_fetch_array($query)) {
+                                                                        ?>
+                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[6] == $kriteria[2]) echo 'selected="selected"'; ?>>
+                                                                                <?= $kriteria[2]; ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
+                                                            <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="pendapatan_perbulan">Pendapatan Perbulan</label>
-                                                                    <select class="form-control" name="pendapatan_perbulan" id="pendapatan_perbulan">
+                                                                    <label for="kompetensi_dasar_akhlak">Kompetensi Dasar
+                                                                        Akhlak</label>
+                                                                    <select class="form-control" name="kompetensi_dasar_akhlak" id="kompetensi_dasar_akhlak">
                                                                         <option>--Silahkan Pilih--</option>
                                                                         <?php
-                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Pendapatan Perbulan'");
+                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Kompetensi Dasar Akhlak Perilaku Sosial Emosi'");
                                                                         while ($kriteria = mysqli_fetch_array($query)) {
                                                                         ?>
-                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[7] == $kriteria[2]) echo 'selected="selected"'; ?>><?= $kriteria[2]; ?></option>
+                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[7] == $kriteria[2]) echo 'selected="selected"'; ?>>
+                                                                                <?= $kriteria[2]; ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="kondisi_hunian">Kondisi Hunian</label>
-                                                                    <select class="form-control" name="kondisi_hunian" id="kondisi_hunian">
+                                                                    <label for="kompetensi_dasar_umum">Kompetensi Dasar
+                                                                        Umum</label>
+                                                                    <select class="form-control" name="kompetensi_dasar_umum" id="kompetensi_dasar_umum">
                                                                         <option>--Silahkan Pilih--</option>
                                                                         <?php
-                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Kondisi Hunian'");
+                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Kompetensi Dasar Umum'");
                                                                         while ($kriteria = mysqli_fetch_array($query)) {
                                                                         ?>
-                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[8] == $kriteria[2]) echo 'selected="selected"'; ?>><?= $kriteria[2]; ?></option>
+                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[8] == $kriteria[2]) echo 'selected="selected"'; ?>>
+                                                                                <?= $kriteria[2]; ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="sejahtera">Sejahtera</label>
-                                                                    <select class="form-control" name="sejahtera" id="sejahtera">
+                                                                    <label for="kemandirian">Kemandirian</label>
+                                                                    <select class="form-control" name="kemandirian" id="kemandirian">
                                                                         <option>--Silahkan Pilih--</option>
                                                                         <?php
-                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Sejahtera'");
+                                                                        $query = mysqli_query($conn, "SELECT * FROM tb_kondisi WHERE nama_kriteria = 'Kemandirian'");
                                                                         while ($kriteria = mysqli_fetch_array($query)) {
                                                                         ?>
-                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[9] == $kriteria[2]) echo 'selected="selected"'; ?>><?= $kriteria[2]; ?></option>
+                                                                            <option value="<?= $kriteria[2]; ?>" <?php if ($row[9] == $kriteria[2]) echo 'selected="selected"'; ?>>
+                                                                                <?= $kriteria[2]; ?></option>
                                                                         <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="kesiapan">Kesiapan</label>
+                                                                    <select class="form-control" name="kesiapan" id="kesiapan">
+                                                                        <option>--Silahkan Pilih--</option>
+                                                                        <option value="Siap" <?php if ($row[10] == "Siap") echo 'selected="selected"'; ?>>
+                                                                            Siap</option>
+                                                                        <option value="Belum Siap" <?php if ($row[10] == "Belum Siap") echo 'selected="selected"'; ?>>
+                                                                            Belum Siap</option>
                                                                     </select>
                                                                 </div>
                                                             </div>

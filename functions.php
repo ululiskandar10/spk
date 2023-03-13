@@ -1,7 +1,7 @@
 <?php
 
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "nb_db");
+$conn = mysqli_connect("localhost", "root", "", "db_nb");
 
 function query($query)
 {
